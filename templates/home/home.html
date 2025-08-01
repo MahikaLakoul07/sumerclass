@@ -1,0 +1,16 @@
+{% extends 'master/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %} #base.html ma huncha/ block ma bhako content haru display garcha
+
+<h2>Our Products</h2>
+
+{% for product in products %}
+<div class="products">
+    <a href="{% url 'product_detail' product.id %}">
+        {{ product.name }}
+    </a>
+    <p>Price: Rs. {{product.price}}</p>
+</div>
+{% endfor %}
+{% endblock %}
+
